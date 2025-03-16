@@ -20,6 +20,7 @@ export type Expertise = {
 export type Work = {
   id: string;
   name: string;
+  sub_name: string;
   body?: string;
   body_html?: string;
   expertise: Expertise;
