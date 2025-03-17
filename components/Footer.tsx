@@ -23,7 +23,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full py-12 px-4 border-t border-gray-200">
+    <footer className="w-full py-12 px-4 border-t border-gray-200 font-objective">
       <div className="container mx-auto">
         <div className="flex justify-center gap-24 md:gap-48 lg:gap-96">
           {/* サイト内リンク */}

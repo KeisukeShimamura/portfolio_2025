@@ -11,6 +11,10 @@ body {
   color: var(--foreground);
 }
 
+.font-objective {
+  font-family: var(--font-objective);
+}
+
 .text-stroke-lg {
   -webkit-text-stroke: 3px white;
 }

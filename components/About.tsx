@@ -7,7 +7,9 @@ export default async function About() {
   return (
     <section className="py-20 px-4" id="about">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-8">About</h2>
+        <h2 className="text-4xl font-objective font-bold text-center mb-8">
+          About
+        </h2>
         <div className="w-full lg:w-1/2 mx-auto mb-24">
           <p>
             私はフルスタックエンジニアとして、主にWebアプリケーションの開発に携わっています。フロントエンドからバックエンドまで、幅広い技術スタックの経験を持っており、最適なソリューションを提供することを心がけています。
@@ -22,7 +24,7 @@ export default async function About() {
               }`}
             >
               <h3 className="text-3xl mb-4 font-bold flex flex-col gap-2">
-                {expertise.english_name}
+                <span className="font-objective">{expertise.english_name}</span>
                 <span className="text-sm">{expertise.name}</span>
               </h3>
               <Content content={expertise.note || ""} />

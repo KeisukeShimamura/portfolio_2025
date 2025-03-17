@@ -57,7 +57,9 @@ export default function Contact() {
   return (
     <section className="py-20 px-4" id="contact">
       <div className="container mx-auto max-w-2xl">
-        <h2 className="text-4xl font-bold text-center mb-8">Contact</h2>
+        <h2 className="text-4xl font-objective font-bold text-center mb-8">
+          Contact
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <label htmlFor="name" className="block mb-1 text-sm">

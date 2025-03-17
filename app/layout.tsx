@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Noto_Sans_JP } from "next/font/google";
 
 const objective = localFont({
   src: [
@@ -25,6 +26,15 @@ const objective = localFont({
   variable: "--font-objective",
 });
 
+const notoSansJp = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  preload: false,
+  variable: "--font-noto-sans-jp",
+  display: "swap",
+  fallback: ["Hiragino Sans", "Hiragino Kaku Gothic ProN", "sans-serif"],
+});
+
 export const metadata: Metadata = {
   title: "ポートフォリオ",
   description: "私のポートフォリオサイトです",
@@ -36,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${objective.variable}`}>
-      <body className={`${objective.className}`}>
+    <html lang="ja" className={`${objective.variable} ${notoSansJp.variable}`}>
+      <body className={`${notoSansJp.className}`}>
         <Header />
         {children}
         <Footer />

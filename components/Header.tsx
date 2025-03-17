@@ -2,21 +2,21 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "motion/react";
+//import { motion } from "motion/react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { link: "#about", title: "About" },
-    { link: "#skill", title: "Skill" },
-    { link: "#works", title: "Works" },
-    { link: "#contact", title: "Contact" },
+    { link: "/#about", title: "About" },
+    { link: "/#skill", title: "Skill" },
+    { link: "/works", title: "Works" },
+    { link: "/#contact", title: "Contact" },
   ];
 
   return (
     <header className="fixed top-0 w-full z-50">
-      <nav className="container mx-auto px-4 py-6">
+      <nav className="container mx-auto px-4 py-3 my-3 bg-white rounded-2xl">
         <div className="flex items-center justify-between">
           {/* ロゴ */}
           <Link href="/" className="text-2xl font-bold flex items-center gap-2">
@@ -24,31 +24,13 @@ export default function Header() {
           </Link>
 
           {/* デスクトップメニュー */}
-          <ul className="hidden lg:flex items-center gap-6 ml-auto">
+          <ul className="hidden lg:flex items-center gap-12 ml-auto">
             {menuItems.map((item) => (
               <li key={item.link}>
-                <Link
-                  href={item.link}
-                  className="text-white flex items-center group"
-                >
-                  <motion.svg
-                    className="inline-block w-3 h-3 mr-1"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    stroke="none"
-                    initial={{ y: 0 }}
-                    whileHover={{
-                      y: [-30, 0, -10, 0],
-                      transition: {
-                        duration: 0.5,
-                        repeat: 1,
-                        ease: "easeInOut",
-                      },
-                    }}
-                  >
-                    <circle cx="12" cy="12" r="8" />
-                  </motion.svg>
-                  <span className="pl-0.5 font-bold">{item.title}</span>
+                <Link href={item.link} className="flex items-center">
+                  <span className="pl-0.5 font-objective font-bold">
+                    {item.title}
+                  </span>
                 </Link>
               </li>
             ))}

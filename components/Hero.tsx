@@ -24,7 +24,7 @@ export default function Hero() {
     <section className="h-screen flex items-center justify-center bg-[#222] text-white">
       <div className="container mx-auto px-4 md:px-0">
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-8xl font-bold mb-8"
+          className="text-4xl md:text-6xl lg:text-8xl font-objective font-bold mb-8"
           initial="hidden"
           animate="visible"
           variants={{
@@ -50,7 +50,7 @@ export default function Hero() {
           ))}
         </motion.h1>
         <motion.p
-          className="text-2xl md:text-3xl lg:text-4xl font-bold text-stroke-sm text-[#222] mb-2"
+          className="text-2xl md:text-3xl lg:text-4xl font-objective font-bold text-stroke-sm text-[#222] mb-2"
           initial="hidden"
           animate="visible"
           variants={{
@@ -67,7 +67,7 @@ export default function Hero() {
           {subtitle}
         </motion.p>
         <motion.p
-          className="text-sm md:text-base lg:text-lg font-medium"
+          className="text-sm md:text-base lg:text-lg font-objective font-medium"
           initial="hidden"
           animate="visible"
           variants={{
