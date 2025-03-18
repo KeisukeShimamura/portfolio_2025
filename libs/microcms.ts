@@ -21,11 +21,15 @@ export const getSkills = async () => {
   return response.contents;
 };
 
-export const getWorks = async (queries?: { limit?: number }) => {
+export const getWorks = async (queries?: {
+  limit?: number;
+  filters?: string;
+}) => {
   const response = await client.getList<Work>({
     endpoint: "works",
     queries: {
       limit: queries?.limit,
+      filters: queries?.filters,
     },
   });
   return response.contents;
