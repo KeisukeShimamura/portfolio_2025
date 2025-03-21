@@ -1,9 +1,13 @@
 import WorksList from "@/components/works/WorksList";
-
+import Breadcrumb from "@/components/Breadcrumb";
 export default async function WorksPage() {
+  const breadcrumbItems = [
+    { label: "HOME", href: "/" },
+    { label: "WORKS", href: "/works" },
+  ];
   return (
     <main className="container mx-auto mt-24 px-4 py-8">
-      <h1 className="text-3xl font-objective font-bold mb-8">Works</h1>
+      <Breadcrumb items={breadcrumbItems} />
       <WorksList />
     </main>
   );
