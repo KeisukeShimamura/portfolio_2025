@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import WorkDetail from "@/components/works/WorkDetail";
 import { getWork } from "@/libs/microcms";
 import Breadcrumb from "@/components/Breadcrumb";
+
 export default async function WorkPage({ params }: { params: { id: string } }) {
-  const work = await getWork(params.id);
+  const { id } = await params;
+  const work = await getWork(id);
 
   if (!work) {
     notFound();
@@ -12,7 +14,7 @@ export default async function WorkPage({ params }: { params: { id: string } }) {
   const breadcrumbItems = [
     { label: "HOME", href: "/" },
     { label: "WORKS", href: "/works" },
-    { label: work.name, href: `/works/${params.id}` },
+    { label: work.name, href: `/works/${id}` },
   ];
 
   return (
