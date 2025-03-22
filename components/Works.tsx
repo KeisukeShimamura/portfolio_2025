@@ -44,7 +44,7 @@ export default async function Works() {
         <div className="mt-8 text-center">
           <Link
             href="/works"
-            className="inline-block font-objective px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors"
+            className="inline-block font-objective px-12 py-3 bg-gray-900 text-white rounded-full border border-gray-900 hover:bg-white hover:text-gray-900 transition-colors duration-500 text-sm"
           >
             View All Works
           </Link>

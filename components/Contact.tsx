@@ -120,7 +120,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full lg:w-1/2 mx-auto block cursor-pointer px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-500 transition-colors"
+            className="w-full lg:w-1/2 mx-auto block cursor-pointer px-6 py-3 bg-gray-900 text-white rounded-full border border-gray-900 hover:bg-white hover:text-gray-900 transition-colors duration-500 text-sm"
           >
             送信する
           </button>
