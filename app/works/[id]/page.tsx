@@ -4,9 +4,9 @@ import { getWork, getWorks } from "@/libs/microcms";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Metadata } from "next";
 import { Work } from "@/types";
+
 type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ id: string }>;
 };
 
 export default async function WorkPage({ params }: Props) {
