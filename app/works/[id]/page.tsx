@@ -1,9 +1,15 @@
 import { notFound } from "next/navigation";
 import WorkDetail from "@/components/works/WorkDetail";
-import { getWork } from "@/libs/microcms";
+import { getWork, getWorks } from "@/libs/microcms";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Metadata } from "next";
-export default async function WorkPage({ params }: { params: { id: string } }) {
+import { Work } from "@/types";
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function WorkPage({ params }: Props) {
   const { id } = await params;
   const work = await getWork(id);
 
@@ -25,11 +31,7 @@ export default async function WorkPage({ params }: { params: { id: string } }) {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const work = await getWork(id);
 
@@ -46,4 +48,12 @@ export async function generateMetadata({
       images: work.images.length > 0 ? [{ url: work.images[0].image.url }] : [],
     },
   };
+}
+
+export async function generateStaticParams() {
+  const works = await getWorks();
+
+  return works.map((work: Work) => ({
+    id: work.id,
+  }));
 }
