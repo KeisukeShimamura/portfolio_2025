@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import WorkDetail from "@/components/works/WorkDetail";
 import { getWork } from "@/libs/microcms";
 import Breadcrumb from "@/components/Breadcrumb";
-
+import { Metadata } from "next";
 export default async function WorkPage({ params }: { params: { id: string } }) {
   const { id } = await params;
   const work = await getWork(id);
@@ -23,4 +23,27 @@ export default async function WorkPage({ params }: { params: { id: string } }) {
       <WorkDetail work={work} />
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const { id } = await params;
+  const work = await getWork(id);
+
+  if (!work) {
+    notFound();
+  }
+
+  return {
+    title: `${work.name} - ${work.sub_name} | ポートフォリオ`,
+    description: work.body,
+    openGraph: {
+      title: `${work.name} - ${work.sub_name} | ポートフォリオ`,
+      description: work.body,
+      images: work.images.length > 0 ? [{ url: work.images[0].image.url }] : [],
+    },
+  };
 }
