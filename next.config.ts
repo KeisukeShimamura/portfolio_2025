@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["skillicons.dev", "images.microcms-assets.io"],
   },
+  devIndicators: false,
 };
 
 export default nextConfig;
